@@ -1,7 +1,7 @@
 #output {
   background-color: aquamarine;
   border-radius: 10px;
-  width: 250px;
+  width: 400px;
 }
 
 .comment:nth-child(odd) {
