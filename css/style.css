@@ -1,0 +1,9 @@
+#output {
+  background-color: aquamarine;
+  border-radius: 10px;
+  width: 250px;
+}
+
+.comment:nth-child(odd) {
+  background-color: cornflowerblue;
+}
