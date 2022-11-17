@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name=”viewport” content=”width=device-width,initial-scale=1″>
   <title>message</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -11,14 +12,14 @@
 
   <!-- コンテンツ表示画面 -->
 
-  <div>
+  <div class="fullWrap">
     <!--/ コンテンツ表示画面 -->
     <div id="output" style="overflow: auto;height: 500px;"></div>
     <div id="output"></div>
     <!-- input area -->
     <div> 名前：<input type="text" id="uname"> </div>
     <div>
-      <textarea id="text" cols="30" rows="10" oninput="checkText()"></textarea>
+      <textarea id="text" cols="30" rows="10"></textarea>
       <button id="send">送信</button>
     </div>
   </div>
@@ -54,29 +55,26 @@
     const db = getDatabase(app);//RealtimeDBに接続
     const dbRef = ref(db, "message");//RealtimeDB内のmessageを使う
 
-
-    function checkText() {
-      const text = document.getElementById("text");
-      const button = document.getElementById("button");
-      console.log(text)
-      if (text.value && text.value.length) {
-        //入力欄が空ならdisabled解除
-        button.disabled = false;
-      } else {
-        //入力されていればdisabled付与
-        button.disabled = true;
-      }
-    }
+    // let checkText = function (checkText) {
+    //   const text = document.getElementById("text");
+    //   const button = document.getElementById("button");
+    //   console.log(text)
+    //   if (text.value && text.value.length) {
+    //     //入力欄が空ならdisabled解除
+    //     button.disabled = false;
+    //   } else {
+    //     //入力されていればdisabled付与
+    //     button.disabled = true;
+    //   }
+    // };
     //htmlからデータ取得
     $("#send").on("click", function () {
       const msg = {
         uname: $("#uname").val(),
         text: $("#text").val()
       }
-      //テキストボックス内の文字列消去
-      // let uname = document.getElementById("uname").textContent;
-      // document.getElementById('uname').textContent = '';
-      // alert(uname + text); //取得確認
+      $("#uname").val("");
+      $("#text").val("");
       const newPostRef = push(dbRef);//pushできる状況を作る
       set(newPostRef, msg); //dbに値をセットする
     });
@@ -100,6 +98,10 @@
 
   </script>
 
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

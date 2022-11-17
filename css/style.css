@@ -1,9 +1,25 @@
+/* .fullWrap {
+} */
+
 #output {
-  background-color: aquamarine;
+  background-color: black;
   border-radius: 10px;
   width: 400px;
 }
 
 .comment:nth-child(odd) {
   background-color: cornflowerblue;
+  margin-left: auto;
+
+
+}
+
+.comment:nth-child(even) {
+  background-color: gray;
+}
+
+.comment {
+  width: 40%;
+  border-radius: 10px;
+  padding: 10px;
 }
