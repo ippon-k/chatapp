@@ -10,16 +10,22 @@
 .comment:nth-child(odd) {
   background-color: cornflowerblue;
   margin-left: auto;
-
-
+  margin-right: 10px;
 }
 
 .comment:nth-child(even) {
   background-color: gray;
+  margin-left: 10px;
 }
 
 .comment {
   width: 40%;
   border-radius: 10px;
   padding: 10px;
+}
+
+/* ボタンがdisabledの時の表示 */
+.form_submit:disabled {
+  /* cursor: not-allowed; なぜか反応しない*/
+  background-color: red;
 }

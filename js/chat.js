@@ -21,19 +21,7 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);//RealtimeDBに接続
 const dbRef = ref(db, "message");//RealtimeDB内のmessageを使う
 
-//文字列削除とボタンの自動アクティブ化を目指したが失敗
-// function checkText() {
-//   const text = document.getElementById("text");
-//   const button = document.getElementById("button");
-//   console.log(text)
-//   if (text.value && text.value.length) {
-//     //入力欄が空ならdisabled解除
-//     button.disabled = false;
-//   } else {
-//     //入力されていればdisabled付与
-//     button.disabled = true;
-//   }
-// }
+
 
 //htmlからデータ取得
 $("#send").on("click", function () {
@@ -54,7 +42,7 @@ onChildAdded(dbRef, function (data) {
   h += '<br>';
   h += msg.text;
   h += '<br>';
-  h += '<button id="del">×</button>';
+  h += '<button class="delete">×</button>';
   h += '</p>';
   $("#output").append(h);
   //デフォルトでスクロールを一番下にする
