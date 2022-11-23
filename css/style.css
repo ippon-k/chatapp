@@ -24,6 +24,10 @@
   padding: 10px;
 }
 
+.icon::before {
+  content: 'e2b1';
+}
+
 /* ボタンがdisabledの時の表示 */
 .form_submit:disabled {
   /* cursor: not-allowed; なぜか反応しない*/

@@ -13,7 +13,6 @@
 //   }
 // }
 //11/20submit未入力時不活性化処理
-//この記述はDOMを作り終えた時に処理が実行される
 const inputName = document.getElementById('uname');
 const inputText = document.getElementById('text');
 const button = document.getElementById('send');
@@ -66,9 +65,15 @@ inputText.addEventListener('keyup', (e) => {
 // });
 
 //2
-function removeExample(button) {
-  let parent = button.parentNode;
-  // console.log(parent);
-  parent.remove();
-  //https://tech-fill.net/javascript_remove_element_dynamically/
-}
+// function removeExample(button) {
+//   let parent = button.parentNode;
+//   // console.log(parent);
+//   parent.remove();
+//   //https://tech-fill.net/javascript_remove_element_dynamically/
+
+//   //firebase-delete
+//   // const deleteDb = ref(db, "comment/www/" + key);
+//   // document.querySelector(this).addEventListener("click", function () {
+//   //   remove(deleteDb);
+//   // });
+// }
