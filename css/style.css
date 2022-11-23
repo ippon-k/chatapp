@@ -24,8 +24,11 @@
   padding: 10px;
 }
 
-.icon::before {
+/* .icon::before {
   content: 'e2b1';
+} */
+#delete {
+  border-radius: 20px;
 }
 
 /* ボタンがdisabledの時の表示 */
